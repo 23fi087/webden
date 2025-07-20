@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学科・コース | Nova Architectural University</title>
+    <!-- Bootstrap CSSの読み込み -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesomeの読み込み (アイコン用) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts (Noto Sans JP) の読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Roboto Mono) の読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <!-- 自作CSSの読み込み -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Spline 3D背景のコンテナ -->
+    <div id="spline-bg">
+        <!-- Spline 3Dビューアの埋め込み -->
+        <spline-viewer url="https://prod.spline.design/fBjoA3Z2tq9tqFdo/scene.splinecode"></spline-viewer>
+    </div>
+
+    <!-- メインコンテンツラッパー -->
+    <div class="main-content">
+        <!-- ナビゲーションバー -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <!-- ブランドロゴと大学名 -->
+                <a class="navbar-brand" href="index.html"><i class="fas fa-university me-2"></i>Nova Architectural University</a>
+                <!-- モバイル用ナビゲーション切り替えボタン -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- ナビゲーションメニュー -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html#home">ホーム</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="department.html">学科・コース</a></li>
+                        <li class="nav-item"><a class="nav-link" href="curriculum.html">カリキュラム</a></li>
+                        <li class="nav-item"><a class="nav-link" href="research.html">研究</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#news">ニュース</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ヒーローセクション (学科・コースのメインビジュアル) -->
+        <header id="home" class="hero" style="background-image: url('img/学科.png'); background-size: cover; background-position: center; min-height: 60vh; display: flex; align-items: center;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="hero-content">
+                            <h1>学科・コース</h1>
+                            <p>建築と情報を横断し、未来を創造する4つの専門領域</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- デジタルアーキテクチャ学科セクション -->
+        <section id="digital-architecture" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <!-- セクションタイトル (アニメーション付き) -->
+                    <h2 class="animated-title">
+                        <div class="text" aria-label="デジタルアーキテクチャ学科">
+                            <span class="char">デ</span><span class="char">ジ</span><span class="char">タ</span><span class="char">ル</span><span class="char">ア</span><span class="char">ー</span><span class="char">キ</span><span class="char">テ</span><span class="char">ク</span><span class="char">チ</span><span class="char">ャ</span><span class="char">学</span><span class="char">科</span>
+                        </div>
+                        <span class="visuallyHidden">デジタルアーキテクチャ学科</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>デジタル技術を駆使し、革新的な建築デザインと都市空間を創造する</p>
+                </div>
+                <div class="row align-items-stretch">
+                    <!-- 学科イメージ -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/Gemini_Generated_Image_9eq6ys9eq6ys9eq6.png" alt="デジタルアーキテクチャ学科" class="img-fluid rounded-3 shadow-lg fade-in h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- 学科概要と学習内容 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100" style="transition-delay: 0.1s;">
+                            <h3 class="text-white mb-3">概要</h3>
+                            <p class="text-muted-color">
+                                デジタルアーキテクチャ学科では、最新のBIM（Building Information Modeling）やパラメトリックデザイン、AIを活用した建築設計手法を学びます。持続可能な社会に貢献するスマートシティや、人々の生活を豊かにする空間デザインを、デジタル技術と融合させて実現する能力を養います。
+                            </p>
+                            <h3 class="text-white mb-3 mt-4">主な学習内容</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>BIM/CADによる建築設計</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>パラメトリック・ジェネラティブデザイン</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>建築情報学、AIと建築</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>環境シミュレーションとサステナブル建築</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- インタラクティブデザイン学科セクション -->
+        <section id="interactive-design" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <!-- セクションタイトル (アニメーション付き) -->
+                    <h2 class="animated-title">
+                        <div class="text" aria-label="インタラクティブデザイン学科">
+                            <span class="char">イ</span><span class="char">ン</span><span class="char">タ</span><span class="char">ラ</span><span class="char">ク</span><span class="char">テ</span><span class="char">ィ</span><span class="char">ブ</span><span class="char">デ</span><span class="char">ザ</span><span class="char">イ</span><span class="char">ン</span><span class="char">学</span><span class="char">科</span>
+                        </div>
+                        <span class="visuallyHidden">インタラクティブデザイン学科</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>人と空間、情報が織りなす新しい体験をデザインする</p>
+                </div>
+                <div class="row align-items-stretch flex-row-reverse">
+                    <!-- 学科イメージ -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/Gemini_Generated_Image_lswj3hlswj3hlswj.png" alt="インタラクティブデザイン学科" class="img-fluid rounded-3 shadow-lg fade-in h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- 学科概要と学習内容 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100" style="transition-delay: 0.1s;">
+                            <h3 class="text-white mb-3">概要</h3>
+                            <p class="text-muted-color">
+                                インタラクティブデザイン学科では、ユーザーエクスペリエンス（UX）とユーザーインターフェース（UI）設計を核に、空間におけるインタラクションデザインを追求します。VR/AR、プロジェクションマッピング、センサー技術などを活用し、人々の行動や感情に働きかける魅力的な空間体験を創造する専門家を育成します。
+                            </p>
+                            <h3 class="text-white mb-3 mt-4">主な学習内容</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>UX/UIデザイン、サービスデザイン</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>VR/ARコンテンツ開発、メディアアート</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>プログラミング、センサー・IoT技術</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>空間演出、インタラクティブインスタレーション</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 都市インタラクティブコースセクション -->
+        <section id="urban-informatics" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <!-- セクションタイトル (アニメーション付き) -->
+                    <h2 class="animated-title">
+                        <div class="text" aria-label="都市インタラクティブコース">
+                            <span class="char">都</span><span class="char">市</span><span class="char">情</span><span class="char">報</span><span class="char">学</span><span class="char">コ</span><span class="char">ー</span><span class="char">ス</span>
+                        </div>
+                        <span class="visuallyHidden">都市インタラクティブコース</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>データとAIで都市の課題を解決し、持続可能な未来都市を設計する</p>
+                </div>
+                <div class="row align-items-stretch">
+                    <!-- コースイメージ -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/Gemini_Generated_Image_xorc0mxorc0mxorc.png" alt="都市情報学コース" class="img-fluid rounded-3 shadow-lg fade-in h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- コース概要と学習内容 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100" style="transition-delay: 0.1s;">
+                            <h3 class="text-white mb-3">概要</h3>
+                            <p class="text-muted-color">
+                                都市インタラクティブコースでは、都市が抱える交通、環境、防災などの課題に対し、ビッグデータ分析、AI、GIS（地理情報システム）などの情報科学的手法を用いて解決策を探ります。スマートシティの実現に向けた政策立案やシステム開発に貢献できる、実践的な能力を育成します。
+                            </p>
+                            <h3 class="text-white mb-3 mt-4">主な学習内容</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>都市データ分析、統計学</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>GISと空間情報科学</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>都市計画、交通工学</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>AI/機械学習による都市シミュレーション</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 空間メディアデザインコースセクション -->
+        <section id="spatial-media-design" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <!-- セクションタイトル (アニメーション付き) -->
+                    <h2 class="animated-title">
+                        <div class="text" aria-label="空間メディアデザインコース">
+                            <span class="char">空</span><span class="char">間</span><span class="char">メ</span><span class="char">デ</span><span class="char">ィ</span><span class="char">ア</span><span class="char">デ</span><span class="char">ザ</span><span class="char">イ</span><span class="char">ン</span><span class="char">コ</span><span class="char">ー</span><span class="char">ス</span>
+                        </div>
+                        <span class="visuallyHidden">空間メディアデザインコース</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>メディア表現と空間演出を融合し、新たなコミュニケーションを創造する</p>
+                </div>
+                <div class="row align-items-stretch flex-row-reverse">
+                    <!-- コースイメージ -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/Gemini_Generated_Image_xorc0mxorc0mxorc (1).png" alt="空間メディアデザインコース" class="img-fluid rounded-3 shadow-lg fade-in h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- コース概要と学習内容 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100" style="transition-delay: 0.1s;">
+                            <h3 class="text-white mb-3">概要</h3>
+                            <p class="text-muted-color">
+                                空間メディアデザインコースでは、映像、音響、照明、インタラクションといった多様なメディア要素を空間に統合し、メッセージ性のある体験を創出します。展示デザイン、舞台芸術、イベント演出、デジタルサイネージなど、空間を舞台としたメディア表現の可能性を探求し、企画から実装までを一貫して行えるクリエイターを育成します。
+                            </p>
+                            <h3 class="text-white mb-3 mt-4">主な学習内容</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>メディアアート、インスタレーション</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>映像・音響制作、プロジェクションマッピング</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>空間デザイン、照明デザイン</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>インタラクティブコンテンツ開発</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <div class="container">
+                <!-- コピーライト表記 -->
+                <div class="copyright text-center">
+                    &copy; 2025 Nova Architectural University. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Bootstrap JSの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- 自作JavaScriptの読み込み -->
+    <script src="js/script.js"></script>
+</body>
+</html>

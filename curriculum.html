@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <!-- レスポンシブ対応のための設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ページタイトル -->
+    <title>カリキュラム | Nova Architectural University</title>
+    <!-- Bootstrap CSSの読み込み（デザイン用フレームワーク） -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesomeの読み込み（アイコン用） -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts (Noto Sans JP) の読み込み（日本語フォント） -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Roboto Mono) の読み込み（英数字用フォント） -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <!-- 自作CSSの読み込み -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- メインコンテンツ全体のラッパー -->
+    <div class="main-content">
+        <!-- ナビゲーションバー（上部メニュー） -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <!-- ブランドロゴと大学名 -->
+                <a class="navbar-brand" href="index.html"><i class="fas fa-university me-2"></i>Nova Architectural University</a>
+                <!-- モバイル用ナビゲーション切り替えボタン -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- ナビゲーションメニュー（各ページへのリンク） -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html#home">ホーム</a></li>
+                        <li class="nav-item"><a class="nav-link" href="department.html">学科・コース</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="curriculum.html">カリキュラム</a></li>
+                        <li class="nav-item"><a class="nav-link" href="research.html">研究</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#news">ニュース</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ヒーローセクション（カリキュラムのメインビジュアル） -->
+        <header id="home" class="hero" style="background-image: url('img/カリキュラム.png'); background-size: cover; background-position: center; min-height: 60vh; display: flex; align-items: center;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="hero-content">
+                            <!-- メインタイトルとサブタイトル -->
+                            <h1>カリキュラム</h1>
+                            <p>基礎から応用へ、体系的に専門知識を深める4年間</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 1年次セクション -->
+        <section id="year1" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <!-- セクションタイトル（アニメーション付き） -->
+                    <h2 class="animated-title">
+                        <div class="text" aria-label="1年次：基礎力の養成">
+                            <span class="char">1</span><span class="char">年</span><span class="char">次</span><span class="char">：</span><span class="char">基</span><span class="char">礎</span><span class="char">力</span><span class="char">の</span><span class="char">養</span><span class="char">成</span>
+                        </div>
+                        <span class="visuallyHidden">1年次：基礎力の養成</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>建築と情報科学の基礎を幅広く学び、専門分野への土台を築きます。</p>
+                </div>
+                <div class="row align-items-stretch">
+                    <!-- 1年次イメージ画像 -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/１年生.png" alt="1年次" class="img-fluid rounded-3 shadow-lg h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- 1年次の主な学習内容 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100">
+                            <h3 class="text-white mb-3">主な学習内容</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>建築概論、デザイン基礎</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>プログラミング入門</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>CAD演習、情報倫理</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2年次セクション -->
+        <section id="year2" class="section">
+            <div class="container">
+                <div class="section-title">
+                     <!-- セクションタイトル（アニメーション付き） -->
+                     <h2 class="animated-title">
+                        <div class="text" aria-label="2年次：専門分野への導入">
+                            <span class="char">2</span><span class="char">年</span><span class="char">次</span><span class="char">：</span><span class="char">専</span><span class="char">門</span><span class="char">分</span><span class="char">野</span><span class="char">へ</span><span class="char">の</span><span class="char">導</span><span class="char">入</span>
+                        </div>
+                        <span class="visuallyHidden">2年次：専門分野への導入</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>各学科・コースの専門分野に触れ、自身の興味と適性を見極めます。</p>
+                </div>
+                <div class="row align-items-stretch flex-row-reverse">
+                    <!-- 2年次イメージ画像 -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/２年生.png" alt="2年次" class="img-fluid rounded-3 shadow-lg h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- 2年次の主な学習内容 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100">
+                            <h3 class="text-white mb-3">主な学習内容</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>デジタル建築設計</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>インタラクションデザイン概論</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>PBL（Project Based Learning）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3年次セクション -->
+        <section id="year3" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <!-- セクションタイトル（アニメーション付き） -->
+                    <h2 class="animated-title">
+                        <div class="text" aria-label="3年次：応用的・実践的学び">
+                            <span class="char">3</span><span class="char">年</span><span class="char">次</span><span class="char">：</span><span class="char">応</span><span class="char">用</span><span class="char">的</span><span class="char">・</span><span class="char">実</span><span class="char">践</span><span class="char">的</span><span class="char">学</span><span class="char">び</span>
+                        </div>
+                        <span class="visuallyHidden">3年次：応用的・実践的学び</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>選択した専門分野を深く掘り下げ、実践的なプロジェクトに取り組みます。</p>
+                </div>
+                <div class="row align-items-stretch">
+                    <!-- 3年次イメージ画像 -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/３年生.png" alt="3年次" class="img-fluid rounded-3 shadow-lg h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- 3年次の主な学習内容 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100">
+                            <h3 class="text-white mb-3">主な学習内容</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>BIM/AI建築設計</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>VR/AR空間デザイン</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>企業連携プロジェクト</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4年次セクション -->
+        <section id="year4" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <!-- セクションタイトル（アニメーション付き） -->
+                    <h2 class="animated-title">
+                        <div class="text" aria-label="4年次：卒業研究">
+                            <span class="char">4</span><span class="char">年</span><span class="char">次</span><span class="char">：</span><span class="char">卒</span><span class="char">業</span><span class="char">研</span><span class="char">究</span>
+                        </div>
+                        <span class="visuallyHidden">4年次：卒業研究</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>4年間の集大成として、自身の研究テーマを深く追求し、卒業論文・制作を行います。</p>
+                </div>
+                <div class="row align-items-stretch flex-row-reverse">
+                    <!-- 4年次イメージ画像 -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/４年生.png" alt="4年次" class="img-fluid rounded-3 shadow-lg h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- 4年次の主な学習内容 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100">
+                            <h3 class="text-white mb-3">主な学習内容</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>卒業研究・卒業制作</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>研究発表、論文執筆</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>キャリアデザイン</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター（ページ下部の情報） -->
+        <footer class="footer">
+            <div class="container">
+                <!-- コピーライト表記 -->
+                <div class="copyright text-center">
+                    &copy; 2025 Nova Architectural University. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Bootstrap JSの読み込み（動的UI用） -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Spline 3Dビューアのスクリプト読み込み（背景用、未使用なら削除可） -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.94/build/spline-viewer.js"></script>
+    <!-- 自作JavaScriptの読み込み（アニメーション等） -->
+    <script src="js/script.js"></script>
+</body>
+</html>

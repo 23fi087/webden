@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研究 | Nova Architectural University</title>
+    <!-- Bootstrap CSSの読み込み -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesomeの読み込み (アイコン用) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts (Noto Sans JP) の読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Roboto Mono) の読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <!-- 自作CSSの読み込み -->
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <!-- メインコンテンツラッパー -->
+    <div class="main-content">
+        <!-- ナビゲーションバー -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <!-- ブランドロゴと大学名 -->
+                <a class="navbar-brand" href="index.html"><i class="fas fa-university me-2"></i>Nova Architectural University</a>
+                <!-- モバイル用ナビゲーション切り替えボタン -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- ナビゲーションメニュー -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html#home">ホーム</a></li>
+                        <li class="nav-item"><a class="nav-link" href="department.html">学科・コース</a></li>
+                        <li class="nav-item"><a class="nav-link" href="curriculum.html">カリキュラム</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="research.html">研究</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#news">ニュース</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ヒーローセクション (研究室紹介のメインビジュアル) -->
+        <header id="home" class="hero" style="background-image: url('img/研究室.png'); background-size: cover; background-position: center; min-height: 60vh; display: flex; align-items: center;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="hero-content">
+                            <h1>研究室紹介</h1>
+                            <p>多様な研究分野で、未来のテクノロジーを探求する</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 計算設計融合研究室セクション -->
+        <section id="lab-ai" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <!-- セクションタイトル (アニメーション付き) -->
+                    <h2 class="animated-title">
+                        <div class="text" aria-label="計算設計融合研究室">
+                            <span class="char">計</span><span class="char">算</span><span class="char">設</span><span class="char">計</span><span class="char">融</span><span class="char">合</span><span class="char">研</span><span class="char">究</span><span class="char">室</span>
+                        </div>
+                        <span class="visuallyHidden">計算設計融合研究室</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>AIとデータサイエンスで建築・都市の未来を創造</p>
+                </div>
+                <div class="row align-items-stretch">
+                    <!-- 研究室イメージ -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/研究室１.png" alt="計算設計融合研究室" class="img-fluid rounded-3 shadow-lg fade-in h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- 研究テーマと担当教員 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100">
+                            <h3 class="text-white mb-3">研究テーマ</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>AI活用による建築デザイン・最適化</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>都市データ分析とスマートシティ</li>
+                            </ul>
+                            <h3 class="text-white mb-3 mt-4">担当教員</h3>
+                            <p class="text-muted-color">田中 太郎 教授</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 先端ファブリケーション研究室セクション -->
+        <section id="lab-cps" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <!-- セクションタイトル (アニメーション付き) -->
+                    <h2 class="animated-title">
+                        <div class="text" aria-label="先端ファブリケーション研究室">
+                            <span class="char">先</span><span class="char">端</span><span class="char">フ</span><span class="char">ァ</span><span class="char">ブ</span><span class="char">リ</span><span class="char">ケ</span><span class="char">ー</span><span class="char">シ</span><span class="char">ョ</span><span class="char">ン</span><span class="char">研</span><span class="char">究</span><span class="char">室</span>
+                        </div>
+                        <span class="visuallyHidden">先端ファブリケーション研究室</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>現実空間と情報空間を融合し、新しい建築・都市システムを構築</p>
+                </div>
+                <div class="row align-items-stretch flex-row-reverse">
+                    <!-- 研究室イメージ -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/研究室２.png" alt="先端ファブリケーション研究室" class="img-fluid rounded-3 shadow-lg fade-in h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- 研究テーマと担当教員 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100">
+                            <h3 class="text-white mb-3">研究テーマ</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>IoTによる建築環境モニタリング</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>スマートビルディング・ロボット施工</li>
+                            </ul>
+                            <h3 class="text-white mb-3 mt-4">担当教員</h3>
+                            <p class="text-muted-color">佐藤 花子 准教授</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 未来都市環境設計研究室セクション -->
+        <section id="lab-digital-expression" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <!-- セクションタイトル (アニメーション付き) -->
+                    <h2 class="animated-title">
+                        <div class="text" aria-label="未来都市環境設計研究室">
+                            <span class="char">未</span><span class="char">来</span><span class="char">都</span><span class="char">市</span><span class="char">環</span><span class="char">境</span><span class="char">設</span><span class="char">計</span><span class="char">研</span><span class="char">究</span><span class="char">室</span>
+                        </div>
+                        <span class="visuallyHidden">未来都市環境設計研究室</span>
+                    </h2>
+                    <!-- セクションサブタイトル -->
+                    <p>VR/AR・プロジェクションマッピングで空間の新たな表現を追求</p>
+                </div>
+                <div class="row align-items-stretch">
+                    <!-- 研究室イメージ -->
+                    <div class="col-lg-6 mb-3 mb-lg-0 d-flex">
+                        <img src="img/研究室３.png" alt="未来都市環境設計研究室" class="img-fluid rounded-3 shadow-lg fade-in h-100 w-100" style="object-fit: cover; max-height: 320px;">
+                    </div>
+                    <!-- 研究テーマと担当教員 -->
+                    <div class="col-lg-6 d-flex">
+                        <div class="glass-card p-3 p-md-4 fade-in w-100">
+                            <h3 class="text-white mb-3">研究テーマ</h3>
+                            <ul class="list-unstyled text-muted-color">
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>没入型VR/AR空間コンテンツ</li>
+                                <li><i class="fas fa-check-circle me-2 text-secondary-color"></i>プロジェクションマッピング</li>
+                            </ul>
+                            <h3 class="text-white mb-3 mt-4">担当教員</h3>
+                            <p class="text-muted-color">鈴木 健太 講師</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <div class="container">
+                <!-- コピーライト表記 -->
+                <div class="copyright text-center">
+                    &copy; 2025 Nova Architectural University. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Bootstrap JSの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- 自作JavaScriptの読み込み -->
+    <script src="js/script.js"></script>
+</body>
+</html>

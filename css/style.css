@@ -1,0 +1,771 @@
+:root {
+    /* WebサイトのテーマカラーをApple風に更新 */
+    --primary-color: #000f1f; /* メインの背景色 */
+    --secondary-color: #00aaff; /* アクセントカラー、リンクやボタンなどに使用 */
+    --accent-color: #e74c3c; /* 別のアクセントカラー (現在未使用) */
+    --text-color: #f5f5f7; /* 主要なテキスト色 (オフホワイト) */
+    --text-muted-color: #a1a1a6; /* 薄いテキスト色 (グレー) */
+    --card-bg-color: rgba(25, 40, 65, 0.5); /* カードの背景色 (半透明のダークブルー) */
+    --card-border-color: rgba(255, 255, 255, 0.15); /* カードの境界線色 */
+    --navbar-bg-color: rgba(15, 30, 55, 0.6); /* ナビゲーションバーの背景色 (半透明の濃いブルー) */
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif; /* フォント設定 */
+    line-height: 1.8; /* 行の高さ */
+    color: var(--text-color); /* テキスト色 */
+    background-color: var(--primary-color); /* 背景色 */
+    overflow: hidden; /* ページ全体のスクロールを無効化 (Spline背景用) */
+}
+
+/* 固定されたSpline 3D背景のコンテナ */
+#spline-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* 最背面 */
+}
+
+/* メインコンテンツを背景の上に配置し、スクロールコンテナとして設定 */
+.main-content {
+    position: relative;
+    z-index: 10; /* 背景より前面 */
+    height: 100vh; /* コンテナの高さをビューポートに合わせる */
+    overflow-y: scroll; /* 縦方向のスクロールを有効化 */
+    overflow-x: hidden; /* 横スクロールを無効化 */
+    scroll-snap-type: y mandatory; /* Y軸のスクロールスナップを強制 */
+    padding-top: 40px; /* ナビゲーションバーの高さ分の余白を追加 */
+    scroll-padding-top: 40px; /* 固定ヘッダーの高さ分を考慮してスクロール位置を調整 */
+}
+
+/* ナビゲーションバーのスタイル */
+.navbar {
+    background: var(--navbar-bg-color); /* 背景色 */
+    backdrop-filter: blur(15px) saturate(150%); /* 背景のぼかし効果 */
+    -webkit-backdrop-filter: blur(15px) saturate(150%); /* Safari対応 */
+    padding: 1rem 0;
+    transition: background 0.3s ease; /* 背景色の変化を滑らかに */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 下線 */
+}
+
+/* スクロール時のナビゲーションバーのスタイル */
+.navbar.scrolled {
+    background: rgba(15, 30, 55, 0.8);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2); /* 影 */
+}
+
+/* ナビゲーションバーのブランド名スタイル */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-color) !important;
+}
+
+/* ナビゲーションリンクのスタイル */
+.navbar-nav .nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+    margin: 0 0.1rem;
+    padding: 0 0; /* 上下の余白を極限まで減らす */
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* ナビゲーションリンクのホバー時・アクティブ時のスタイル */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--secondary-color) !important;
+    transform: translateY(-2px); /* 少し上に移動 */
+}
+
+/* ナビゲーションリンクの下線アニメーション */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px; /* 下線の位置をラベル直下に */
+    left: 50%;
+    background: var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+/* ナビゲーションリンクのホバー時・アクティブ時の下線アニメーション */
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* ダークテーマ用のトグルアイコン */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* ヒーローセクションのスタイル */
+.hero {
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 20;
+    text-align: left;
+    padding-bottom: 6rem; /* 下からの余白を追加 */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 25px rgba(0,0,0,0.7); /* 影を少し強く */
+    opacity: 1 !important;
+    animation: none !important;
+}
+
+/* セクション共通スタイル */
+.section {
+    padding: 3rem 0; /* パディングを少し調整 */
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    font-family: 'Noto Sans JP', sans-serif; /* タイトルアニメーション用にフォントを上書きされないように */
+}
+
+.section-title p {
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.18); /* 影で視認性UP */
+}
+
+/* --- タイトルアニメーションのスタイル --- */
+.animated-title .text {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* h2用のスタイル */
+.section-title h2.animated-title .text {
+    text-transform: uppercase;
+}
+/* pタグ用のスタイル */
+.section-title p.animated-title {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 400;
+    text-transform: none;
+    min-height: calc(1.2rem * 1.8);
+    line-height: 1.8;
+    margin-bottom: 0;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.18);
+}
+.animated-title .text.is-active {
+    --y: 0;
+}
+.animated-title .char {
+    display: inline-block;
+    transform: translateY(var(--y, 110%));
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    transition-delay: calc(0.04s * var(--char-index));
+}
+.visuallyHidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+/* --- ここまでタイトルアニメーションのスタイル --- */
+
+
+/* Glassmorphismカードスタイル */
+.glass-card {
+    background: var(--card-bg-color); /* 背景色 */
+    backdrop-filter: blur(20px) saturate(180%); /* 背景のぼかしと彩度 */
+    -webkit-backdrop-filter: blur(20px) saturate(180%); /* Safari対応 */
+    border-radius: 18px; /* 角丸 */
+    border: 1.5px solid var(--card-border-color); /* 境界線 */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2); /* 影 */
+    transition: all 0.3s ease; /* 全てのプロパティの変化を滑らかに */
+    height: 100%; /* 親要素の高さに合わせる */
+}
+
+/* Glassmorphismカードのホバー時のスタイル */
+.glass-card:hover {
+    transform: translateY(-10px); /* 少し上に移動 */
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3); /* 影を強く */
+    border-color: rgba(255, 255, 255, 0.3); /* 境界線の色を濃く */
+    background: rgba(25, 40, 65, 0.7); /* 背景色を濃く */
+}
+
+/* 特徴セクションの新しいスタイル */
+#about {
+   background-color: rgba(0,0,0,0.3); /* 背景色 */
+}
+
+/* 学科リストアイテムのスタイル */
+.department-list-item {
+    display: block;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--card-border-color); /* 下線 */
+    text-align: right;
+    text-decoration: none;
+}
+/* 学科リストアイテムの最初の要素の上線 */
+.department-list-item:first-child {
+    border-top: 1px solid var(--card-border-color);
+}
+/* 学科リストアイテムの見出しスタイル */
+.department-list-item h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--text-color); /* より見やすいように変更 */
+    margin: 0;
+    transition: all 0.3s ease;
+}
+/* 学科リストアイテムの見出しのホバー時のスタイル */
+.department-list-item:hover h3 {
+    color: var(--secondary-color); /* ホバー時の色を変更 */
+    transform: translateX(-10px); /* 少し左に移動 */
+}
+
+/* アウトラインボタンのスタイル */
+.btn-outline-light.btn-lg {
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px; /* 角丸 */
+    border-width: 2px;
+    font-weight: 500;
+}
+
+/* --- 学科・コースセクション (シンプルリスト) --- */
+.department-simple-list div {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--card-border-color);
+    cursor: default;
+    text-align: left;
+}
+.department-simple-list div:last-child {
+    border-bottom: none;
+}
+.department-simple-list h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 0;
+    transition: all 0.3s ease;
+}
+.department-simple-list div:hover h3 {
+    color: var(--secondary-color);
+    transform: translateX(10px);
+}
+/* --- 学科・コースセクションのスタイルここまで --- */
+
+
+/* --- 研究室紹介セクション (シンプルリスト) --- */
+#research {
+   background-color: rgba(0,0,0,0.3); /* 背景色 */
+}
+.research-simple-list div {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--card-border-color);
+    cursor: default;
+    text-align: right;
+}
+.research-simple-list div:first-child {
+    border-top: 1px solid var(--card-border-color);
+}
+.research-simple-list h3 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 0;
+    transition: all 0.3s ease;
+}
+.research-simple-list div:hover h3 {
+    color: var(--secondary-color);
+    transform: translateX(-10px);
+}
+/* --- 研究室紹介セクションのスタイルここまで --- */
+
+
+/* ニュースセクション */
+.news-item {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.news-date {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.news-title {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+ .news-item p {
+    color: var(--text-muted-color);
+}
+
+
+/* お問い合わせセクション */
+ #contact {
+   background-color: rgba(0,0,0,0.3); /* 背景色 */
+ }
+/* お問い合わせフォームの入力欄スタイル */
+#contact .form-control {
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid var(--card-border-color);
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 10px;
+}
+/* お問い合わせフォームの入力欄フォーカス時のスタイル */
+#contact .form-control:focus {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--text-color);
+    box-shadow: 0 0 0 0.25rem rgba(77, 184, 255, 0.5);
+    border-color: var(--secondary-color);
+}
+/* お問い合わせフォームのプレースホルダーテキスト色 */
+#contact .form-control::placeholder { color: rgba(255,255,255,0.5); }
+
+/* お問い合わせフォームの送信ボタン */
+#contact .btn-submit {
+    background: var(--secondary-color);
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+/* お問い合わせフォームの送信ボタンホバー時のスタイル */
+#contact .btn-submit:hover {
+     background: #6dc7ff;
+     transform: translateY(-2px);
+}
+
+/* お問い合わせセクションのアイコンスタイル */
+#contact .contact-info i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+
+/* フッターのスタイル */
+.footer {
+    background: #000814; /* 背景色 */
+    color: var(--text-color);
+    padding: 4rem 0 1rem;
+    position: relative;
+}
+
+/* フッターの見出しスタイル */
+.footer h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* フッターのリンクスタイル */
+.footer a {
+    color: var(--text-muted-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* フッターのリンクホバー時のスタイル */
+.footer a:hover { color: var(--secondary-color); }
+/* フッターのリストアイテムの余白 */
+.footer .list-unstyled li { margin-bottom: 0.75rem; }
+
+/* フッターのソーシャルアイコンスタイル */
+.footer .social-icons a {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+/* フッターのコピーライト表記スタイル */
+.footer .copyright {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* フェードインアニメーションのキーフレーム */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* フェードイン要素の初期状態 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* フェードイン要素が表示された時の状態 */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* レスポンシブデザイン (991.98px以下) */
+@media (max-width: 991.98px) {
+     .hero h1 { font-size: 2.8rem; }
+     .hero-content {
+         text-align: center;
+         padding-bottom: 4rem;
+     }
+}
+/* レスポンシブデザイン (767.98px以下) */
+@media (max-width: 767.98px) {
+    .hero h1 { font-size: 2.3rem; }
+    .glass-card { margin-bottom: 2rem; }
+    .section { padding: 4rem 0; }
+    .footer { text-align: center; }
+    .footer .social-icons {
+        margin-top: 1rem;
+        justify-content: center;
+        display: flex;
+    }
+    .department-list-item h3 {
+        font-size: 1.5rem;
+    }
+    .curriculum-simple-list h3 {
+        font-size: 1.5rem;
+    }
+    .research-simple-list h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* カスタムスクロールバーのスタイル */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--primary-color); }
+::-webkit-scrollbar-thumb { background: var(--secondary-color); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #55baff; }
+
+/* --- ページ遷移アニメーション --- */
+/* ページがフェードアウトする際のスタイル */
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+/* --- スクロールスナップ機能 --- */
+/* 各セクションのスクロールスナップ設定 */
+.hero, .section, .footer {
+    scroll-snap-align: start; /* 各セクションの開始位置でスナップ */
+    min-height: 100vh; /* 各セクションを最低でもビューポートの高さに */
+    display: flex; /* Flexboxを使用してコンテンツを中央揃え */
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; /* コンテンツのはみ出しを隠す */
+    transition: filter 0.6s ease-in-out; /* フィルター効果のトランジション */
+}
+
+/* ヒーローセクションの配置調整 */
+.hero {
+     justify-content: flex-end; /* heroセクションは元の配置を維持 */
+}
+
+/* Spline背景のコンテナ (重複定義だが念のため残す) */
+#spline-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* カリキュラムセクションのタイトル余白調整 */
+#curriculum .section-title {
+    margin-bottom: 2rem;
+}
+
+/* カリキュラムセクションのサブタイトル余白調整 */
+#curriculum .section-title p {
+    margin-bottom: 1.5rem;
+}
+
+/* カリキュラムセクションの背景色 */
+#curriculum {
+   background-color: rgba(0,0,0,0.3);
+}
+
+/* カリキュラムセクションのリストアイテムのテキスト配置 */
+#curriculum .department-list-item {
+    text-align: left;
+}
+
+/* --- ページ遷移トランジション用 --- */
+.transition {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  background: #d6d6d6;
+  transform: skewX(-5deg) translateX(-50px);
+  transition: 2s all ease-in-out;
+  -webkit-transition: 2s all ease-in-out;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+/* ページ遷移アニメーションのクラス */
+.anim-trans {
+  animation: anim 2s ease-in-out;
+}
+/* ページ遷移アニメーションのキーフレーム */
+@keyframes anim {
+  0% {}
+  20%  { z-index: 10000; transform: skewX(5deg) translateX(-100%); }
+  40%  { transform: skewX(0deg) translateX(0); width: 100%; z-index: 10000; box-shadow: 10px 10px 5px #eaeaea; }
+  60%  { transform: skewX(3deg) translateX(0); width: 100%; z-index: 10000; box-shadow: 10px 10px 5px #eaeaea; }
+  80%  { transform: skewX(1deg) translateX(-100%); width: 60%; z-index: 10000; box-shadow: 10px 10px 5px #eaeaea; }
+  100% { transform: skewX(-5deg) translateX(-50px); width: 30%; z-index: 1; box-shadow: none; }
+}
+/* --- ここまでページ遷移トランジション用 --- */
+
+/* ニュースセクションの背景色 */
+#news {
+    background-color: rgba(0,0,0,0.3);
+}
+
+/* =============================
+   curriculum.html 専用スタイル
+   ============================= */
+
+.curriculum-page body {
+    /* curriculumページの背景色・テキスト色・フォント設定 */
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.curriculum-page .navbar {
+    /* curriculumページのナビゲーションバーの背景・ぼかし・下線 */
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+.curriculum-page .navbar.scrolled {
+    /* スクロール時のナビバー色・影・下線 */
+    background-color: rgba(30, 30, 30, 0.9);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--border-color);
+}
+.curriculum-page .navbar-brand {
+    /* ナビバーのブランド名（大学名）の色・太さ */
+    font-weight: 700;
+    color: var(--text-primary) !important;
+}
+.curriculum-page .nav-link {
+    /* ナビゲーションリンクの色・下線・余白 */
+    color: var(--text-secondary) !important;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 8px;
+}
+.curriculum-page .nav-link:hover, .curriculum-page .nav-link.active {
+    /* ホバー・アクティブ時のリンク色 */
+    color: var(--primary-color) !important;
+}
+.curriculum-page .nav-link::after {
+    /* ナビリンク下線アニメーション用 */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+.curriculum-page .nav-link:hover::after, .curriculum-page .nav-link.active::after {
+    /* ホバー・アクティブ時の下線表示 */
+    width: 100%;
+}
+.curriculum-page .hero {
+    /* ヒーローセクション（上部大見出し）の背景・高さ・配置 */
+    padding: 180px 0 120px;
+    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 1)), url('https://placehold.co/1920x1080/000000/FFFFFF?text=Abstract+Architecture') no-repeat center center;
+    background-size: cover;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+.curriculum-page .hero-content h1 {
+    /* ヒーローセクションのタイトル文字 */
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+.curriculum-page .hero-content p {
+    /* ヒーローセクションのサブタイトル文字 */
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.curriculum-page .section {
+    /* 各セクションの上下余白・横スクロール防止 */
+    padding: 100px 0;
+    overflow-x: hidden;
+}
+.curriculum-page .section:nth-of-type(odd) {
+    /* 奇数番目セクションの背景色 */
+    background-color: var(--surface-color);
+}
+.curriculum-page .section-title h2 {
+    /* セクションタイトルの大きさ・太さ・下線 */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+.curriculum-page .section-title h2::after {
+    /* セクションタイトル下のグラデーションライン */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+.curriculum-page .section-title p {
+    /* セクションサブタイトルの色・幅・余白 */
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+.curriculum-page .glass-card {
+    /* curriculumページのガラス風カードデザイン */
+    background: rgba(40, 40, 40, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 2.5rem;
+}
+.curriculum-page .glass-card h3 {
+    /* カード内の小見出し色・太さ */
+    color: var(--primary-color);
+    font-weight: 500;
+}
+.curriculum-page .glass-card ul li {
+    /* カード内リストの余白・色・アイコン配置 */
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+}
+.curriculum-page .glass-card ul li i {
+    /* リストアイコンの色・余白 */
+    color: var(--secondary-color);
+    margin-top: 5px;
+    margin-right: 15px;
+}
+.curriculum-page .fade-in-up {
+    /* 上からフェードインするアニメーション初期状態 */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.curriculum-page .fade-in-up.visible {
+    /* 上からフェードインの表示状態 */
+    opacity: 1;
+    transform: translateY(0);
+}
+.curriculum-page .fade-in-left {
+    /* 左からフェードインするアニメーション初期状態 */
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.curriculum-page .fade-in-left.visible {
+    /* 左からフェードインの表示状態 */
+    opacity: 1;
+    transform: translateX(0);
+}
+.curriculum-page .fade-in-right {
+    /* 右からフェードインするアニメーション初期状態 */
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.curriculum-page .fade-in-right.visible {
+    /* 右からフェードインの表示状態 */
+    opacity: 1;
+    transform: translateX(0);
+}
+.curriculum-page .footer {
+    /* curriculumページのフッター（下部情報欄）の背景・色・余白 */
+    background-color: var(--surface-color);
+    padding: 40px 0;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* =============================
+   3Dモデル（Spline/canvas）レスポンシブ表示用サンプル
+   ============================= */
+.model_3d_container {
+  width: 80vw;           /* 画面幅の80% */
+  max-width: 700px;      /* 最大幅 */
+  aspect-ratio: 1 / 1;   /* 正方形。横長にしたい場合は 16/9 など */
+  margin: 0 auto;        /* 中央寄せ */
+  position: relative;
+  background: #111;      /* 背景色（任意） */
+  min-width: 250px;      /* 最小幅 */
+  min-height: 250px;     /* 最小高さ */
+}
+.model_3d_container > spline-viewer,
+.model_3d_container > canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
